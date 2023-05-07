@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TransferSeeder extends Seeder
 {
@@ -12,6 +12,16 @@ class TransferSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $transfers = [
+            ['name' => 'Shared Shuttle'],
+            ['name' => 'Private Car'],
+            ['name' => 'Private Minibus'],
+            ['name' => 'Private Bus'],
+            ['name' => 'Limousine'],
+            ['name' => 'Water Taxi'],
+            ['name' => 'Helicopter'],
+            ['name' => 'Public Transportation'],
+        ];
+        DB::table('transfers')->insert($transfers);
     }
 }
